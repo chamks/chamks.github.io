@@ -57,15 +57,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="cham's blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="基于Apache lucene全文检索1.1 什么是lucene    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。
+2 lucene的工作方式
+lucene提供的服务实际包含两部分：一入一出。所谓入是写入，即将你提供的源（本质是字符串）写入索引或者将其从索引中删除；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Apache lucene全文检索">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/lucene/index.html">
 <meta property="og:site_name" content="cham's blog">
-<meta property="og:description">
+<meta property="og:description" content="基于Apache lucene全文检索1.1 什么是lucene    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。
+2 lucene的工作方式
+lucene提供的服务实际包含两部分：一入一出。所谓入是写入，即将你提供的源（本质是字符串）写入索引或者将其从索引中删除；">
+<meta property="og:updated_time" content="2016-01-25T07:20:09.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cham's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="基于Apache lucene全文检索">
+<meta name="twitter:description" content="基于Apache lucene全文检索1.1 什么是lucene    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。
+2 lucene的工作方式
+lucene提供的服务实际包含两部分：一入一出。所谓入是写入，即将你提供的源（本质是字符串）写入索引或者将其从索引中删除；">
 
 
 
@@ -83,7 +90,7 @@
   };
 </script>
 
-  <title> cham's blog </title>
+  <title> 基于Apache lucene全文检索 | cham's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -102,9 +109,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,15 +208,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-
-    
-      
 
   
   
@@ -231,10 +230,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/01/25/lucene/" itemprop="url">
-                  基于Apache lucene全文检索
-                </a>
+                基于Apache lucene全文检索
               
             
           </h1>
@@ -272,9 +268,7 @@
       
 
       
-        
-          
-            <h1 id="u57FA_u4E8EApache_lucene_u5168_u6587_u68C0_u7D22"><a href="#u57FA_u4E8EApache_lucene_u5168_u6587_u68C0_u7D22" class="headerlink" title="基于Apache lucene全文检索"></a>基于Apache lucene全文检索</h1><p>1.1 什么是lucene<br>    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。</p>
+        <h1 id="u57FA_u4E8EApache_lucene_u5168_u6587_u68C0_u7D22"><a href="#u57FA_u4E8EApache_lucene_u5168_u6587_u68C0_u7D22" class="headerlink" title="基于Apache lucene全文检索"></a>基于Apache lucene全文检索</h1><p>1.1 什么是lucene<br>    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。</p>
 <p>2 lucene的工作方式</p>
 <pre><code>lucene提供的服务实际包含两部分：一入一出。所谓入是写入，即将你提供的源（本质是字符串）写入索引或者将其从索引中删除；所谓出是读出，即向用户提供全文搜索服务，让用户可以通过关键词定位源。
 </code></pre><p>2.1写入流程<br>    源字符串首先经过analyzer处理，包括：分词，分成一个个单词；去除stopword（可选）。<br>将源中需要的信息加入Document的各个Field中，并把需要索引的Field索引起来，把需要存储的Field存储起来。<br>    将索引写入存储器，存储器可以是内存或磁盘。<br>2.2读出流程<br>    用户提供搜索关键词，经过analyzer处理。<br>对处理后的关键词搜索索引找出对应的Document。<br>用户根据需要从找到的Document中提取需要的Field。<br>3 一些需要知道的概念<br>3.1 analyzer<br>    Analyzer是分析器，它的作用是把一个字符串按某种规则划分成一个个词语，并去除其中的无效词语，这里说的无效词语是指英文中的“of”、“the”，中文中的“的”、“地”等词语，这些词语在文章中大量出现，但是本身不包含什么关键信息，去掉有利于缩小索引文件、提高效率、提高命中率。<br>分词的规则千变万化，但目的只有一个：按语义划分。这点在英文中比较容易实现，因为英文本身就是以单词为单位的，已经用空格分开；而中文则必须以某种方法将连成一片的句子划分成一个个词语。具体划分方法下面再详细介绍，这里只需了解分析器的概念即可。<br>3.2 document<br>用户提供的源是一条条记录，它们可以是文本文件、字符串或者数据库表的一条记录等等。一条记录经过索引之后，就是以一个Document的形式存储在索引文件中的。用户进行搜索，也是以Document列表的形式返回。<br>3.3 field<br>    一个Document可以包含多个信息域，例如一篇文章可以包含“标题”、“正文”、“最后修改时间”等信息域，这些信息域就是通过Field在Document中存储的。<br>    Field有两个属性可选：存储和索引。通过存储属性你可以控制是否对这个Field进行存储；通过索引属性你可以控制是否对该Field进行索引。这看起来似乎有些废话，事实上对这两个属性的正确组合很重要，下面举例说明：还是以刚才的文章为例子，我们需要对标题和正文进行全文搜索，所以我们要把索引属性设置为真，同时我们希望能直接从搜索结果中提取文章标题，所以我们把标题域的存储属性设置为真，但是由于正文域太大了，我们为了缩小索引文件大小，将正文域的存储属性设置为假，当需要时再直接读取文件；我们只是希望能从搜索解果中提取最后修改时间，不需要对它进行搜索，所以我们把最后修改时间域的存储属性设置为真，索引属性设置为假。上面的三个域涵盖了两个属性的三种组合，还有一种全为假的没有用到，事实上Field不允许你那么设置，因为既不存储又不索引的域是没有意义的。<br>3.4 term<br>term是搜索的最小单位，它表示文档的一个词语，term由两部分组成：它表示的词语和这个词语所出现的field。<br>3.5 tocken<br>    tocken是term的一次出现，它包含trem文本和相应的起止偏移，以及一个类型字符串。一句话中可以出现多次相同的词语，它们都用同一个term表示，但是用不同的tocken，每个tocken标记该词语出现的地方。<br>3.6 segment<br>    添加索引时并不是每个document都马上添加到同一个索引文件，它们首先被写入到不同的小文件，然后再合并成一个大索引文件，这里每个小文件都是一个segment。<br>4 如何建索引<br>4.1 最简单的能完成索引的代码片断</p>
@@ -629,8 +623,6 @@ public class MySortComparatorSource implements SortComparatorSource
 <p>1、lucene的索引不能太大，要不然效率会很低。大于1G的时候就必须考虑分布索引的问题<br>2、不建议用多线程来建索引，产生的互锁问题很麻烦。经常发现索引被lock，无法重新建立的情况<br>3、中文分词是个大问题，目前免费的分词效果都很差。如果有能力还是自己实现一个分词模块，用最短路径的切分方法，网上有教材和demo源码，可以参考。<br>4、建增量索引的时候很耗cpu，在访问量大的时候会导致cpu的idle为0<br>5、默认的评分机制不太合理，需要根据自己的业务定制</p>
 <p>来自 <a href="http://blog.csdn.net/tianlincao/article/details/6867127" target="_blank" rel="external">http://blog.csdn.net/tianlincao/article/details/6867127</a> </p>
 
-          
-        
       
     </div>
 
@@ -638,105 +630,32 @@ public class MySortComparatorSource implements SortComparatorSource
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/01/25/helloworld/" rel="next" title="长安汽车面对工业4.0">
+                <i class="fa fa-chevron-left"></i> 长安汽车面对工业4.0
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/01/25/helloworld/" itemprop="url">
-                  长安汽车面对工业4.0
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T13:57:35+08:00" content="2016-01-25">
-              2016-01-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="u957F_u5B89_u6C7D_u8F66_u667A_u80FD_u5236_u9020"><a href="#u957F_u5B89_u6C7D_u8F66_u667A_u80FD_u5236_u9020" class="headerlink" title="长安汽车智能制造"></a>长安汽车智能制造</h1><p> 长安汽车 工业4.0</p>
-<p>1.互联网+时代的4.0汽车工业如变革？长安汽车总裁朱华荣说，就是向消费者提供最好的体验产品。<br>2.如果说工业1.0是机械制造时代，工业2.0是电气化与自动化时代，工业3.0是电子信息化时代。那么“工业4.0”则是通过人、设备与产品的沟通，打造一个高度灵活的智能制造模式。互联网正在冲击各行各业，而工业4.0时代的到来，对传统汽车企业的冲击与改造正在重塑一个汽车行业的新格局。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -744,6 +663,10 @@ public class MySortComparatorSource implements SortComparatorSource
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -763,8 +686,17 @@ public class MySortComparatorSource implements SortComparatorSource
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/tx.jpg"
@@ -811,6 +743,23 @@ public class MySortComparatorSource implements SortComparatorSource
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u57FA_u4E8EApache_lucene_u5168_u6587_u68C0_u7D22"><span class="nav-number">1.</span> <span class="nav-text">基于Apache lucene全文检索</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -885,6 +834,167 @@ public class MySortComparatorSource implements SortComparatorSource
   
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
