@@ -292,8 +292,7 @@
 
       
         
-          
-            <hr>
+          <hr>
 <p> <strong>Web.xml分为如下几部分：</strong></p>
 <ol>
 <li>context-param;</li>
@@ -303,27 +302,12 @@
 <li>welcome-file-list;</li>
 <li>mime-mapping;</li>
 </ol>
-<p>初始化顺序：<strong>context-param -&gt; listener -&gt; filter -&gt; servlet</strong></p>
-<hr>
-<h2 id="context-prarm_3A"><a href="#context-prarm_3A" class="headerlink" title="context-prarm:"></a>context-prarm:</h2><pre><code>&lt;context-param&gt;
-        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-        &lt;param-value&gt;
-            /WEB-INF/config/application-context.xml
-            /WEB-INF/config/cache-context.xml
-            /WEB-INF/config/cacore-context.xml
-            /WEB-INF/config/cacms-context.xml
-            /WEB-INF/config/quartz-task.xml
-        &lt;/param-value&gt;
-&lt;/context-param&gt;
-</code></pre><p>param-name:设定上下文的参数名称。必须是唯一名称<br>param-value:设定的参数名称的值<br>可以通过getServletContext().getInitParameter(“contextConfigLocation”)得到。作为全局变量为每一个servlet初始化。所以，跟整个application有关。tomcat会首先加载它。<br>    如果不定义context-param,web容器将通过listener加载默认的web-inf下的application.xml文件。</p>
-<hr>
-<h2 id="Filter_3A"><a href="#Filter_3A" class="headerlink" title="Filter:"></a>Filter:</h2><p>创建Filter必须实现javax.servlet.Filter接口，在该接口中定义了三个方法。</p>
-<pre><code>1. void init()：初始化
-2. void destroy()：销毁
-3. void doFilter(ServletRequest request, ServletResponse response,FilterChain chain)：执行过滤处理
-</code></pre><p><strong>过滤链FilterChain：</strong><br>两个过滤器，EncodingFilter负责设置编码，SecurityFilter负责控制权限，服务器会按照web.xml中过滤器定义的先后循序组装成一条链，然后一次执行其中的doFilter()方法。执行的顺序就如下图所示，执行第一个过滤器的chain.doFilter()之前的代码，第二个过滤器的chain.doFilter()之前的代码，请求的资源，第二个过滤器的chain.doFilter()之后的代码，第一个过滤器的chain.doFilter()之后的代码，最后返回响应。</p>
-
-          
+<p>初始化顺序：<strong>context-param -&gt; listener -&gt; filter -&gt; servlet</strong><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/05/Web.xml详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -423,10 +407,7 @@
 
       
         
-          <p>1.1 什么是lucene<br>    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。</p>
-<p>2 lucene的工作方式</p>
-<pre><code>lucene提供的服务实际包含两部分：一入一出。所谓入是写入，即将你提供的源（本质是字符串）写入索引或者将其从索引中删除；所谓出是读出，即向用户提供全文搜索服务，让用户可以通过关键词定位源。
-</code></pre>
+          <p>1 什么是lucene<br>    Lucene是一个全文搜索框架，而不是应用产品。因此它并不像www.baidu.com 或者google Desktop那么拿来就能用，它只是提供了一种工具让你能实现这些产品。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/25/lucene/#more" rel="contents">
               阅读全文 &raquo;
