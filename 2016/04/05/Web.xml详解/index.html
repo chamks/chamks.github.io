@@ -327,7 +327,7 @@ mime-mapping;
 </ol>
 <p>初始化顺序：<strong>context-param -&gt; listener -&gt; filter -&gt; servlet</strong><br><a id="more"></a></p>
 <hr>
-<h2 id="context-prarm_3A"><a href="#context-prarm_3A" class="headerlink" title="context-prarm:"></a>context-prarm:</h2><pre><code>&lt;context-param&gt;
+<h2 id="context-prarm"><a href="#context-prarm" class="headerlink" title="context-prarm:"></a>context-prarm:</h2><pre><code>&lt;context-param&gt;
         &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
         &lt;param-value&gt;
             /WEB-INF/config/application-context.xml
@@ -339,7 +339,7 @@ mime-mapping;
 &lt;/context-param&gt;
 </code></pre><p>param-name:设定上下文的参数名称。必须是唯一名称<br>param-value:设定的参数名称的值<br>可以通过getServletContext().getInitParameter(“contextConfigLocation”)得到。作为全局变量为每一个servlet初始化。所以，跟整个application有关。tomcat会首先加载它。<br>    如果不定义context-param,web容器将通过listener加载默认的web-inf下的application.xml文件。</p>
 <hr>
-<h2 id="Filter_3A"><a href="#Filter_3A" class="headerlink" title="Filter:"></a>Filter:</h2><p>创建Filter必须实现javax.servlet.Filter接口，在该接口中定义了三个方法。</p>
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter:"></a>Filter:</h2><p>创建Filter必须实现javax.servlet.Filter接口，在该接口中定义了三个方法。</p>
 <pre><code>1. void init()：初始化
 2. void destroy()：销毁
 3. void doFilter(ServletRequest request, ServletResponse response,FilterChain chain)：执行过滤处理
@@ -368,6 +368,10 @@ mime-mapping;
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/06/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -439,7 +443,7 @@ mime-mapping;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -485,7 +489,7 @@ mime-mapping;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#context-prarm_3A"><span class="nav-number">1.</span> <span class="nav-text">context-prarm:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter_3A"><span class="nav-number">2.</span> <span class="nav-text">Filter:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#context-prarm"><span class="nav-number">1.</span> <span class="nav-text">context-prarm:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter"><span class="nav-number">2.</span> <span class="nav-text">Filter:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -507,7 +511,7 @@ mime-mapping;
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
